@@ -7,8 +7,12 @@ const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
 
   const submitTodoHandler = (e) => {
     e.preventDefault();
+    if(inputText === ""){
+      alert("Type any todo")
+    } else {
     setTodos([...todos, { text: inputText, completed: false, id: Math.random() * 1000 }]);
-    setInputText("");
+  setInputText("");
+  }
   };
 
   const statusHandler = (e) => {
